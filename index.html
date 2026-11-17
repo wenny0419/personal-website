@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wenny Chiu | 全端開發工程師 & 創意科技人</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= 頂部導覽列 ================= -->
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-badge">DEV</span>
+      <span>Wenny Chiu</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">關於我</a></li>
+      <li><a href="#skills">專業技能</a></li>
+      <li><a href="#projects">精選專案</a></li>
+      <li><a href="#contact">聯絡方式</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">開始合作</a>
+  </nav>
+
+  <!-- ================= 主視覺區塊 (Hero) ================= -->
+  <header class="hero" id="about">
+    <div class="hero-content">
+      <div class="greeting-pill">
+        <span>✨ Welcome to my digital workspace</span>
+      </div>
+      <h1 class="hero-title">
+        嗨，我是 <span class="gradient-text">Wenny Chiu</span><br>
+        全端開發與雲端架構師
+      </h1>
+      <p class="hero-desc">
+        專注於打造具備極致美感與高效能的現代化 Web 應用程式。熱愛探索 AI 工具整合、Google Apps Script 自動化與開源科技，致力於用程式碼讓生活與工作變得更優雅高效。
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">瀏覽作品</a>
+        <a href="#contact" class="btn-secondary">與我聯繫</a>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com" target="_blank" class="social-icon" title="GitHub">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon" title="LinkedIn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:wenny.chiu.dev@example.com" class="social-icon" title="Email">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 個人資訊卡片視覺 -->
+    <div class="hero-visual">
+      <div class="profile-card">
+        <div class="avatar-wrapper">
+          <div class="avatar-img">👨‍💻</div>
+        </div>
+        <h3 class="profile-name">Wenny Chiu</h3>
+        <p class="profile-role">Senior Full-Stack Developer</p>
+        <div class="status-badge">
+          <span class="dot-pulse"></span>
+          <span>開放接案與技術諮詢中</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 專業技能區塊 ================= -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <span class="section-tag">Core Competencies</span>
+      <h2 class="section-title">專業技能 & 技術堆疊</h2>
+      <p class="section-desc">秉持現代軟體工程思維，擅長跨端整合與打造全自動化微服務架構</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <span class="skill-icon">🎨</span>
+        <h3>現代前端開發</h3>
+        <p>掌握現代化前端生態系，打造平滑動態效果與直覺細膩的使用者體驗。</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Vue 3 / React</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">TailwindCSS</span>
+          <span class="skill-tag">Next.js</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <span class="skill-icon">⚡</span>
+        <h3>後端與雲端服務</h3>
+        <p>設計高擴展性 RESTful API、GraphQL 與無伺服器 (Serverless) 微架構。</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js / Express</span>
+          <span class="skill-tag">Python / FastAPI</span>
+          <span class="skill-tag">PostgreSQL / Redis</span>
+          <span class="skill-tag">Docker / GCP</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <span class="skill-icon">🤖</span>
+        <h3>自動化與 AI 整合</h3>
+        <p>運用 Google Apps Script (GAS) 與大型語言模型 API 實現業務自動化流程。</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Google Apps Script</span>
+          <span class="skill-tag">Gemini / OpenAI API</span>
+          <span class="skill-tag">Webhook / Bot</span>
+          <span class="skill-tag">Workflow Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 精選作品區塊 ================= -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <span class="section-tag">Featured Work</span>
+      <h2 class="section-title">精選專案展示</h2>
+      <p class="section-desc">結合理論與實務，解決真實問題的精選代表作</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #312e81, #4338ca);">
+          🚀
+        </div>
+        <div class="project-body">
+          <span class="project-category">AI & Automation</span>
+          <h3 class="project-title">SmartFlow 客服自動化中樞</h3>
+          <p class="project-desc">透過 Google Apps Script 串接試算表與企業通訊軟體，打造零成本、高反應速度的即時自動回覆管線。</p>
+          <div class="project-footer">
+            <span class="skill-tag">GAS / Webhook</span>
+            <a href="#" class="project-link">查看詳情 &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #065f46, #047857);">
+          📊
+        </div>
+        <div class="project-body">
+          <span class="project-category">Web Platform</span>
+          <h3 class="project-title">PulseMetrics 雲端數據儀表板</h3>
+          <p class="project-desc">提供即時伺服器負載監控與資料視覺化看板，支援毫秒級 WebSocket 推播與自訂告警觸發。</p>
+          <div class="project-footer">
+            <span class="skill-tag">Vue 3 / D3.js</span>
+            <a href="#" class="project-link">查看詳情 &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #831843, #9d174d);">
+          🐹
+        </div>
+        <div class="project-body">
+          <span class="project-category">Interactive UI</span>
+          <h3 class="project-title">HammyBot 萌寵客服元件</h3>
+          <p class="project-desc">輕量級開源前端對話掛件，支援動態換膚、自訂 API 端點設定，並內建療癒系可愛倉鼠動態互動。</p>
+          <div class="project-footer">
+            <span class="skill-tag">Vanilla JS / CSS3</span>
+            <a href="#" class="project-link">查看詳情 &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 聯絡我區塊 ================= -->
+  <section class="section" id="contact">
+    <div class="section-header">
+      <span class="section-tag">Get in Touch</span>
+      <h2 class="section-title">與我取得聯繫</h2>
+      <p class="section-desc">無論您是有專案合作構想、技術交流，或單純想聊聊，都非常歡迎！</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>讓我們一起打造優質產品 🚀</h3>
+        <p>你可以透過右下角的可愛倉鼠小幫手直接發問，或者填寫右方的表單留下您的聯繫資訊與需求。</p>
+
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <strong>所在城市</strong>
+            <p>台北市，台灣 (可遠端合作)</p>
+          </div>
+        </div>
+
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">✉️</div>
+          <div>
+            <strong>電子信箱</strong>
+            <p>wenny.chiu.dev@example.com</p>
+          </div>
+        </div>
+
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">🐹</div>
+          <div>
+            <strong>專屬客服助理</strong>
+            <p>請點擊右下角倉鼠圖示開啟即時諮詢！</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" placeholder="您的姓名或稱呼" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="您的電子信箱" required>
+        </div>
+        <div class="form-group">
+          <textarea rows="4" placeholder="請描述您的合作構想或想詢問的事情..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%;">送出訊息</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= 頁尾 ================= -->
+  <footer class="footer">
+    <p>© 2026 Wenny Chiu. All rights reserved. Made with ❤️ and lots of sunflower seeds 🌻.</p>
+  </footer>
+
+  <!-- ==========================================================
+       🐹 網站右下角可愛倉鼠客服元件 (Hamster Chatbot Widget)
+  ========================================================== -->
+  <div class="hamster-widget-container">
+    
+    <!-- 浮動提示小氣泡 -->
+    <div class="hamster-speech-bubble" id="speechBubble">
+      <span>點我有驚喜！我是倉鼠小助理 🐹</span>
+    </div>
+
+    <!-- 倉鼠浮動圓形按鈕 (FAB) -->
+    <button class="hamster-fab" id="hamsterFab" aria-label="打開倉鼠客服聊天室">
+      <span class="fab-badge"></span>
+      <!-- 可愛倉鼠精緻向量圖 (SVG) -->
+      <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 兩隻可愛耳朵 -->
+        <ellipse cx="28" cy="24" rx="14" ry="16" fill="#f59e0b" />
+        <ellipse cx="28" cy="24" rx="9" ry="11" fill="#fbcfe8" />
+        <ellipse cx="72" cy="24" rx="14" ry="16" fill="#f59e0b" />
+        <ellipse cx="72" cy="24" rx="9" ry="11" fill="#fbcfe8" />
+
+        <!-- 倉鼠圓滾滾身體/臉蛋 -->
+        <circle cx="50" cy="56" r="38" fill="#fde68a" />
+        <ellipse cx="50" cy="62" rx="26" ry="24" fill="#ffffff" />
+
+        <!-- 招牌圓圓腮紅 -->
+        <ellipse cx="25" cy="58" rx="8" ry="5" fill="#f472b6" opacity="0.65" />
+        <ellipse cx="75" cy="58" rx="8" ry="5" fill="#f472b6" opacity="0.65" />
+
+        <!-- 水汪汪大眼睛 -->
+        <circle cx="36" cy="48" r="5" fill="#1e1b4b" />
+        <circle cx="34" cy="46" r="1.8" fill="#ffffff" />
+        <circle cx="64" cy="48" r="5" fill="#1e1b4b" />
+        <circle cx="62" cy="46" r="1.8" fill="#ffffff" />
+
+        <!-- 可愛小粉紅鼻子與小嘴巴 -->
+        <polygon points="50,54 46,51 54,51" fill="#f472b6" />
+        <path d="M46 56 Q50 60 54 56" stroke="#475569" stroke-width="2" stroke-linecap="round" fill="none" />
+
+        <!-- 手中抱著的葵花子 -->
+        <ellipse cx="50" cy="74" rx="8" ry="12" fill="#78350f" transform="rotate(-15 50 74)" />
+        <ellipse cx="50" cy="74" rx="5" ry="9" fill="#d97706" transform="rotate(-15 50 74)" />
+        <!-- 兩隻小短手 -->
+        <circle cx="40" cy="74" r="5" fill="#fde68a" />
+        <circle cx="60" cy="74" r="5" fill="#fde68a" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- ================= 倉鼠客服對話視窗 ================= -->
+  <div class="hamster-chat-box" id="hamsterChatBox">
+    
+    <!-- 頂部 Header -->
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar-mini">
+          🐹
+        </div>
+        <div class="chat-title-group">
+          <h4>倉鼠小客服 Hammy</h4>
+          <span class="chat-status-text">
+            <span class="dot-pulse" style="width: 6px; height: 6px;"></span>
+            <span id="gasStatusText">本地智慧模式</span>
+          </span>
+        </div>
+      </div>
+      <div class="chat-header-actions">
+        <!-- ⚙️ 關鍵需求：GAS 設定按鈕 -->
+        <button class="header-action-btn" id="settingsBtn" title="設定 Google Apps Script (GAS) 網址">
+          ⚙️
+        </button>
+        <!-- 清空對話 -->
+        <button class="header-action-btn" id="clearChatBtn" title="清除對話紀錄">
+          🗑️
+        </button>
+        <!-- 關閉視窗 -->
+        <button class="header-action-btn" id="closeChatBtn" title="縮小客服視窗">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- GAS 狀態提示橫條 -->
+    <div class="gas-status-bar">
+      <span>後端伺服器連線狀態：</span>
+      <span class="gas-badge local" id="gasBadge">🟡 本地模式</span>
+    </div>
+
+    <!-- 訊息對話區 -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-message bot">
+        <div class="message-avatar">🐹</div>
+        <div class="message-bubble">
+          吱吱！你好呀！我是站長的小管家「倉鼠 Hammy」🌻<br>
+          你可以問我關於站長的問題，或者點擊右上角的 <strong>「⚙️ 設定」</strong> 填入你的 Google Apps Script (GAS) 網址串接你的後端大腦唷！
+        </div>
+        <div class="message-time">剛剛</div>
+      </div>
+    </div>
+
+    <!-- 正在輸入中動畫 -->
+    <div class="typing-indicator" id="typingIndicator">
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+      <span style="font-size: 0.72rem; color: #B67243; margin-left: 6px; font-weight: 500;">倉鼠啃葵花子思考中...</span>
+    </div>
+
+    <!-- 快速常見問答標籤 -->
+    <div class="quick-prompts-container">
+      <button class="quick-chip" data-prompt="介紹一下站長？">💡 介紹站長</button>
+      <button class="quick-chip" data-prompt="有什麼代表作品？">🚀 代表作品</button>
+      <button class="quick-chip" data-prompt="如何聯絡站長？">📫 聯絡方式</button>
+      <button class="quick-chip" data-prompt="如何設定 GAS 網址？">⚙️ 如何設定 GAS</button>
+      <button class="quick-chip" data-prompt="給你吃葵花子！">🌻 餵食葵花子</button>
+    </div>
+
+    <!-- 底部輸入列 -->
+    <div class="chat-input-bar">
+      <input type="text" class="chat-input" id="chatInput" placeholder="輸入訊息... (按 Enter 送出)" autocomplete="off">
+      <button class="chat-send-btn" id="sendBtn" title="發送訊息">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ================= ⚙️ GAS 設定彈窗 (Settings Overlay) ================= -->
+    <div class="settings-modal-overlay" id="settingsModal">
+      <div class="settings-modal-header">
+        <h3>⚙️ GAS 機器人後端設定</h3>
+        <button class="close-settings-btn" id="closeSettingsBtn">✕</button>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label" for="gasUrlInput">Google Apps Script 網頁應用程式網址：</label>
+        <input 
+          type="url" 
+          id="gasUrlInput" 
+          class="settings-input" 
+          placeholder="https://script.google.com/macros/s/AKfycb.../exec"
+        >
+        <div class="settings-hint">
+          * 請填入 GAS 部署後產生的「網頁應用程式 (Web app)」執行網址。
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button class="btn-save-gas" id="saveGasBtn">💾 儲存並啟用</button>
+        <button class="btn-test-gas" id="testGasBtn">🔌 測試連線</button>
+      </div>
+
+      <button class="btn-clear-gas" id="clearGasBtn">恢復為本地預設模式</button>
+      <div id="settingsMsg" style="margin-top: 10px; font-size: 0.8rem; text-align: center;"></div>
+
+      <!-- GAS 快速建置指南 -->
+      <details class="gas-guide-card">
+        <summary>📖 忘記怎麼建立 GAS？點此查看步驟與範例</summary>
+        <div class="gas-guide-content">
+          <ol>
+            <li>在 Google Drive 新增「Google Apps Script」專案。</li>
+            <li>在專案根目錄已為您產生 <code>gas_sample.js</code>，直接複製其中程式碼。</li>
+            <li>點擊右上角「部署 (Deploy)」&rarr;「新部署 (New deployment)」。</li>
+            <li>種類選擇「網頁應用程式 (Web app)」。</li>
+            <li><strong>重要：</strong>「誰可以存取」請務必選「<strong>任何人 (Anyone)</strong>」。</li>
+            <li>複製產生的網址貼回此處點擊儲存！</li>
+          </ol>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
