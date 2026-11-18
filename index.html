@@ -296,13 +296,13 @@
           <h4>倉鼠小客服 Hammy</h4>
           <span class="chat-status-text">
             <span class="dot-pulse" style="width: 6px; height: 6px;"></span>
-            <span id="gasStatusText">本地智慧模式</span>
+            <span id="gasStatusText">線上服務中</span>
           </span>
         </div>
       </div>
       <div class="chat-header-actions">
-        <!-- ⚙️ 關鍵需求：GAS 設定按鈕 -->
-        <button class="header-action-btn" id="settingsBtn" title="設定 Google Apps Script (GAS) 網址">
+        <!-- ⚙️ 關鍵需求：GAS 設定按鈕（僅站長模式顯示） -->
+        <button class="header-action-btn" id="settingsBtn" title="設定 Google Apps Script (GAS) 網址" style="display: none;">
           ⚙️
         </button>
         <!-- 清空對話 -->
@@ -316,8 +316,8 @@
       </div>
     </div>
 
-    <!-- GAS 狀態提示橫條 -->
-    <div class="gas-status-bar">
+    <!-- GAS 狀態提示橫條（僅站長模式顯示） -->
+    <div class="gas-status-bar" id="gasStatusBar" style="display: none;">
       <span>後端伺服器連線狀態：</span>
       <span class="gas-badge local" id="gasBadge">🟡 本地模式</span>
     </div>
@@ -328,7 +328,7 @@
         <div class="message-avatar">🐹</div>
         <div class="message-bubble">
           吱吱！你好呀！我是站長的小管家「倉鼠 Hammy」🌻<br>
-          你可以問我關於站長的問題，或者點擊右上角的 <strong>「⚙️ 設定」</strong> 填入你的 Google Apps Script (GAS) 網址串接你的後端大腦唷！
+          請問有什麼需要幫助的呢?
         </div>
         <div class="message-time">剛剛</div>
       </div>
@@ -347,7 +347,6 @@
       <button class="quick-chip" data-prompt="介紹一下站長？">💡 介紹站長</button>
       <button class="quick-chip" data-prompt="有什麼代表作品？">🚀 代表作品</button>
       <button class="quick-chip" data-prompt="如何聯絡站長？">📫 聯絡方式</button>
-      <button class="quick-chip" data-prompt="如何設定 GAS 網址？">⚙️ 如何設定 GAS</button>
       <button class="quick-chip" data-prompt="給你吃葵花子！">🌻 餵食葵花子</button>
     </div>
 

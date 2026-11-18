@@ -19,8 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const testGasBtn = document.getElementById('testGasBtn');
   const clearGasBtn = document.getElementById('clearGasBtn');
   const gasStatusText = document.getElementById('gasStatusText');
+  const gasStatusBar = document.getElementById('gasStatusBar');
   const gasBadge = document.getElementById('gasBadge');
   const settingsMsg = document.getElementById('settingsMsg');
+  const chatAvatarMini = document.querySelector('.chat-avatar-mini');
 
   // 對話元素
   const chatMessages = document.getElementById('chatMessages');
@@ -37,21 +39,78 @@ document.addEventListener('DOMContentLoaded', () => {
   // 保存多輪對話歷史（含 OpenRouter reasoning_details）
   let chatHistory = [];
 
-  // 初始化 GAS 狀態顯示
-  function updateGasStatusUI() {
-    if (gasUrl && gasUrl.trim().startsWith('http')) {
-      gasBadge.className = 'gas-badge connected';
-      gasBadge.innerHTML = '🟢 已連線 GAS';
-      gasStatusText.textContent = 'GAS 雲端模式';
-      gasUrlInput.value = gasUrl;
+  // 站長模式判斷（?admin=1 或本機已解鎖）
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('admin') === '1') {
+    localStorage.setItem('hamster_owner_mode', 'true');
+  }
+  let isOwnerMode = localStorage.getItem('hamster_owner_mode') === 'true';
+
+  // 切換站長模式（顯示 / 隱藏 ⚙️ 設定齒輪與 GAS 狀態列）
+  function setOwnerMode(enabled, openModal = false) {
+    isOwnerMode = enabled;
+    if (enabled) {
+      localStorage.setItem('hamster_owner_mode', 'true');
     } else {
-      gasBadge.className = 'gas-badge local';
-      gasBadge.innerHTML = '🟡 本地智慧模式';
-      gasStatusText.textContent = '未綁定 GAS (點⚙️設定)';
-      gasUrlInput.value = '';
+      localStorage.removeItem('hamster_owner_mode');
+      settingsModal.classList.remove('active');
+    }
+    updateGasStatusUI();
+    if (enabled && openModal) {
+      settingsModal.classList.add('active');
+      settingsMsg.textContent = '';
+    }
+  }
+
+  // 初始化 GAS 狀態與齒輪顯示
+  function updateGasStatusUI() {
+    if (isOwnerMode) {
+      settingsBtn.style.display = 'flex';
+      if (gasStatusBar) gasStatusBar.style.display = 'flex';
+      if (gasUrl && gasUrl.trim().startsWith('http')) {
+        gasBadge.className = 'gas-badge connected';
+        gasBadge.innerHTML = '🟢 已連線 GAS';
+        gasStatusText.textContent = 'GAS 雲端模式';
+        gasUrlInput.value = gasUrl;
+      } else {
+        gasBadge.className = 'gas-badge local';
+        gasBadge.innerHTML = '🟡 本地智慧模式';
+        gasStatusText.textContent = '未綁定 GAS (點⚙️設定)';
+        gasUrlInput.value = '';
+      }
+    } else {
+      settingsBtn.style.display = 'none';
+      if (gasStatusBar) gasStatusBar.style.display = 'none';
+      settingsModal.classList.remove('active');
+      gasStatusText.textContent = '線上服務中';
     }
   }
   updateGasStatusUI();
+
+  // 連續點擊左上角小倉鼠頭像 5 次，可切換站長模式
+  if (chatAvatarMini) {
+    let avatarClickCount = 0;
+    let avatarClickTimer = null;
+    chatAvatarMini.style.cursor = 'pointer';
+    chatAvatarMini.addEventListener('click', () => {
+      avatarClickCount += 1;
+      clearTimeout(avatarClickTimer);
+      if (avatarClickCount >= 5) {
+        avatarClickCount = 0;
+        const nextState = !isOwnerMode;
+        setOwnerMode(nextState, false);
+        addBotMessage(
+          nextState
+            ? '🐹 已開啟站長設定模式！右上角 ⚙️ 齒輪已顯示。'
+            : '🐹 已切換回一般訪客模式！設定齒輪已隱藏。'
+        );
+      } else {
+        avatarClickTimer = setTimeout(() => {
+          avatarClickCount = 0;
+        }, 2000);
+      }
+    });
+  }
 
   // 切換聊天視窗開關
   function toggleChat() {
@@ -196,6 +255,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const text = chatInput.value.trim();
     if (!text) return;
 
+    // 站長專屬密語指令：不送給機器人，僅用於切換設定齒輪顯示
+    const cmd = text.toLowerCase();
+    if (cmd === '/admin') {
+      chatInput.value = '';
+      setOwnerMode(true, true);
+      addBotMessage('🐹 已開啟站長設定模式！右上角 ⚙️ 齒輪與設定視窗已顯示。');
+      return;
+    }
+    if (cmd === '/visitor' || cmd === '/logout') {
+      chatInput.value = '';
+      setOwnerMode(false, false);
+      addBotMessage('🐹 已切換回一般訪客模式，設定齒輪已隱藏！');
+      return;
+    }
+
     addUserMessage(text);
     chatInput.value = '';
 
@@ -267,12 +341,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return '🐹 站長做過很多超酷的專案！你可以滑動瀏覽頁面中的「精選專案」區塊，包含 AI 智能助理、現代化電商平台以及雲端即時儀表板唷！✨';
     } else if (lower.includes('聯絡') || lower.includes('信箱') || lower.includes('email') || lower.includes('mail')) {
       return '🐹 歡迎點擊網頁導覽列的「聯絡我」，或填寫頁面最下方的表單～站長的電子信箱是 wenny.chiu.dev@example.com ！📫';
-    } else if (lower.includes('gas') || lower.includes('設定') || lower.includes('網址') || lower.includes('機器人')) {
+    } else if (isOwnerMode && (lower.includes('gas') || lower.includes('設定') || lower.includes('網址') || lower.includes('機器人'))) {
       return '🐹 想讓我串接你自己的 Google Apps Script 嗎？\n請點擊我右上角的「⚙️ 設定」按鈕，貼上你的 Web App URL 即可儲存連線唷！';
     } else if (lower.includes('葵花子') || lower.includes('吃') || lower.includes('種子')) {
       return '🐹 哇啊啊啊！是美味的葵花子！*卡滋卡滋大口咀嚼* 謝謝你！倉鼠小幫手元氣滿滿！🌻✨';
     } else {
-      return `🐹 吱！收到你的訊息：「${msg}」！\n若你想串接自己的後端大腦，隨時點擊右上角「⚙️」填入 GAS 網址就能實現客製化回覆囉！🌻`;
+      return `🐹 吱！收到你的訊息：「${msg}」！我會幫你轉達給站長，如果有急事也可以透過網頁下方的聯絡表單直接聯繫唷！🌻`;
     }
   }
 
